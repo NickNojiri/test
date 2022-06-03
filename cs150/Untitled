@@ -1,0 +1,551 @@
+https://ide.cs50.io/70ad63e311e34c609b2d3f63a5ed24d1 // not a link to a rick roll
+Node::Node(string q, string d)
+{
+    descrip = d;
+    quantity = q;
+    previous = NULL;
+    next = NULL;
+}
+Node* Node::GetNext()
+{
+    return next;
+}
+Node* Node::GetPrevious()
+{
+    return previous;
+}
+void Node::SetNext(Node * setter)
+{
+    next = setter;
+}
+void Node::SetPrevious(Node * setter)
+{
+    previous = setter;
+}
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+class List
+{
+	private:
+		Node *head;
+		int length;
+	
+	public:
+		List()
+		{
+			head = NULL;
+			length = 0;
+		}
+
+		/***************************************
+
+			Remove All Functions Below		
+
+		***************************************/
+		Node* getPrevious(Node* node)
+		{
+			Node* temp = head;
+			Node* previous = head;
+
+			if(node == head)
+				return NULL;
+
+			while(temp && temp != node)
+			{
+				previous = temp;
+				temp = temp->getNext();
+			}
+
+			return previous;
+		}
+
+		Node* getIndex(int n)
+		{
+			Node* temp = head;
+			for(int i = 0; i < n && temp; i++)
+			{
+				temp = temp->getNext();
+			}
+			return temp;
+		}
+
+		void setHead(Node* n)
+		{
+			head = n;	
+		}
+
+		void setLength(int i)
+		{
+			length = i;
+		}
+
+		int getLength()
+		{
+			return length;
+		}
+
+		int countNodes(int value)
+		{
+			Node* temp = head;
+			int count = 0;
+
+			while(temp)
+			{
+				if(temp->getValue() == value)
+					count++;
+				temp = temp->getNext();
+			}
+
+			return count;
+		}
+
+		void print()
+		{
+			Node* temp = head;
+			while(temp != NULL)
+			{
+				cout << temp->getValue() << " ";
+				temp = temp->getNext();
+			}
+			cout << endl;
+		}
+
+		void push_front(Node* newNode)
+		{
+			newNode->setNext(head);
+			head = newNode;
+			length++;
+		}
+
+
+		/***************************************
+
+			Remove All Functions Above		
+
+		***************************************/
+
+		Node* front()
+		{
+			return head;
+		}
+
+		const Node* front() const
+		{
+			return head;
+		}
+
+		Node* back()
+		{
+			Node* temp = head;
+			while(temp->getNext())
+				temp = temp->getNext();
+			return temp;
+		}
+
+		const Node* back() const
+		{
+			Node* temp = head;
+			while(temp->getNext())
+				temp = temp->getNext();
+			return temp;
+		}
+
+		Node* begin()
+		{
+			return head;
+		}
+
+		const Node* begin() const
+		{
+			return head;
+		}
+
+		Node* rbegin()
+		{
+			
+			Node* temp = head;
+			if(length == 0)
+				return NULL;
+			while(temp->getNext())
+				temp = temp->getNext();
+			return temp;
+		}
+
+		const Node* rbegin() const
+		{
+			Node* temp = head;
+			if(length == 0)
+				return NULL;
+			while(temp->getNext())
+				temp = temp->getNext();
+			return temp;
+		}
+
+		Node* end()
+		{
+			Node* temp = head;
+			while(temp)
+				temp = temp->getNext();
+			return temp;
+		}
+
+		const Node* end() const
+		{
+			Node* temp = head;
+			while(temp)
+				temp = temp->getNext();
+			return temp;
+		}
+
+		Node* rend()
+		{
+			return NULL;
+		}
+
+		const Node* rend() const
+		{
+			return NULL;
+		}
+
+		int size() const
+		{
+			return length;
+		}
+
+		/*Implement this
+		*/
+		int max_size() const
+		{
+		}
+
+		bool empty() const
+		{
+			if(head == NULL)
+				return true;
+			
+			return false;
+		}
+
+		void push_front(const int val)
+		{
+			Node* newNode = new Node;
+			newNode->setValue(val);
+			newNode->setNext(head);
+			head = newNode;
+			length++;
+		}
+
+		void pop_front()
+		{
+			head = (head->getNext());
+			length--;
+		}
+
+		void pop_back()
+		{
+			Node* temp = getPrevious(rbegin());
+			temp->setNext(NULL);
+			length--;
+		}
+
+		void push_back(const int val)
+		{
+			Node* newNode = new Node;
+			newNode->setValue(val);
+			newNode->setNext(NULL);
+			if(length == 0)
+			{
+				head = newNode;
+				cout << head->getValue() << endl;
+
+			}
+			else
+			{
+				cout << head->getValue() << endl;
+				(rbegin())->setNext(newNode);
+			}
+			newNode->setNext(NULL);
+			length++;
+		}
+
+		Node* insert(Node* position, Node* newNode)
+		{
+			Node* prev = head;
+
+			if(position == head)
+			{
+				push_front(newNode->getValue());
+			}
+			else
+			{
+				prev = getPrevious(position);
+				prev->setNext(newNode);
+				newNode->setNext(position);
+				length++;
+			}
+
+			return newNode;
+		}
+
+		/*Fix insert*/
+		void insert(Node* position, int n, Node* newNode)
+		{
+			for(int i = 0; i < n; i++)
+			{
+				Node* temp = newNode->getCopy();
+				insert(position, temp);
+			}
+		}
+
+		/*Do this*/
+		void insert(Node* position, Node* first, Node* last)
+		{
+		}
+
+		/*Need to free memory*/
+		Node* erase(Node* removeMe)
+		{
+			Node* temp = removeMe;
+			Node* prev;
+
+			if(temp == head)
+			{
+				head = head->getNext();
+			}
+			else
+			{
+				prev = getPrevious(removeMe);
+				prev->setNext(temp->getNext());
+			}
+			length--;
+				
+			return temp;
+		}
+
+		/*Need to free memory*/
+		Node* erase(Node* start, Node* end)
+		{
+			Node* prev;
+			Node* temp = start;
+
+			if(start == head)
+			{
+				while(temp && temp != end->getNext())
+					temp = temp->getNext();
+				head = temp;
+			}
+			else
+			{
+				prev = getPrevious(start);
+				while(temp && temp != end->getNext())
+					temp = temp->getNext();
+				prev->setNext(temp);
+			}
+			return NULL;
+		}
+
+		void swap(List* swap)
+		{
+			Node* temp;
+			int temp2;
+
+			temp2 = swap->getLength();
+			swap->setLength(length);
+			setLength(temp2);
+			temp = swap->getIndex(0);
+			swap->setHead(head);
+			head = temp;
+		}
+
+		void clear()
+		{
+			Node* temp = head;
+			Node* temp2;
+			while(temp)
+			{
+				temp2 = temp;
+				temp = temp->getNext();
+				delete(temp2);
+			}
+			head = NULL;
+			length = 0;
+		}
+
+		void remove(int i)
+		{
+			Node* temp = head;
+			Node* prev;
+			Node* nextNode = head;
+
+			while(temp)
+			{
+				if(temp->getValue() == i)	//A match
+				{
+					prev = getPrevious(temp);
+					nextNode = temp->getNext();
+					erase(temp);
+					temp = nextNode;
+				}
+				else
+					temp = temp->getNext();				
+			}
+			
+		}
+
+		void unique()
+		{
+			bool hitNode;
+			Node* temp = head;
+			int* array = (int*) malloc(sizeof(int) * length);
+			
+			while(temp)
+			{
+				if(countNodes(temp->getValue()) > 1)
+					erase(temp);
+
+				temp = temp->getNext();
+			}
+		}
+
+		void merge(List* otherList)
+		{
+			List* newList = new List;
+			Node* thisTemp = head;
+			Node* otherTemp = otherList->getIndex(0);		
+
+			while(thisTemp && otherTemp)
+			{
+				if(thisTemp->getValue() < otherTemp->getValue())
+				{
+					newList->push_front(thisTemp);
+					thisTemp = thisTemp->getNext();
+					cout << "This temp: " << thisTemp->getValue() << endl;
+					pop_front();
+				}
+				else
+				{
+					newList->push_front(otherTemp);
+					otherTemp = otherTemp->getNext();
+					cout << "Other temp: " << otherTemp->getValue() << endl;
+					otherList->pop_front();
+				}
+			}
+
+			if(thisTemp)
+			{
+				while(thisTemp)
+				{
+					newList->push_front(thisTemp);
+					thisTemp = thisTemp->getNext();
+					pop_front();
+					
+				}
+			}
+			else if(otherTemp)
+			{
+				while(otherTemp)
+				{
+					newList->push_front(otherTemp);
+					otherTemp = otherTemp->getNext();
+					otherList->pop_front();
+				}
+			}
+
+			cout << "Made it here" << endl;
+			swap(newList);
+			//delete(newList);
+		}
+
+		void sort()	//Crappy bubble sort, but w/e
+		{
+			int* tempArray = (int*) malloc(sizeof(int) * length);
+			Node* tempPointer = head;
+			int tempData = 0;
+			int iTemp = 0;
+			int tempLength = 0;
+			int value = 0;
+
+			
+			while(tempPointer)
+			{
+				tempArray[iTemp] = tempPointer->getValue();
+				tempPointer = tempPointer->getNext();
+				iTemp++;
+			}
+			tempLength = length;
+			clear();
+
+			for(int i = 0; i < tempLength; i++)
+			{
+				for(int i2 = i; i2 < tempLength; i2++)
+				{
+					if(tempArray[i2] < tempArray[i])
+					{
+						tempData = tempArray[i];
+						tempArray[i] = tempArray[i2];
+						tempArray[i2] = tempData;
+					}
+				}
+			}
+
+			//Creates nodes
+			cout << "Length: " << tempLength << endl;
+			for(int i = 0; i < tempLength; i++)
+			{
+				value = tempArray[i];
+				push_back(value);
+			}
+		}
+
+		~List()
+		{
+			clear();
+		}
+};
+
+int main()
+{
+	List list1;
+	List list2;
+
+	list1.push_front(22);
+	list1.push_front(44);
+	list1.push_front(66);
+	list1.print();
+
+	list2.push_front(50);
+	list2.push_front(99);
+	list2.push_front(77);
+	list2.push_front(77);
+	list2.push_back(77);
+	list2.push_back(77);
+	list2.push_back(77);
+	list2.push_back(99);
+	list2.print();
+
+	list2.unique();
+	list2.print();
+
+	//list1.merge(&list2);
+	list1.sort();
+	//list1.print();
+
+	
+	//list.insert((list.begin())->getNext(), 5, &newNode);
+	//list.insert(newNode.getNext(), &newNode2);
+	//list.insert(list.front(), &newNode);
+	//list.insert(list.front(), &newNode2);
+	//list.insert(list.front(), &newNode3);
+
+	//list.print();
+	return 0;
+}
+ Edit & Run
+ 
+https://www.youtube.com/watch?v=x5MhydijWmc
+
+g++ fname.cpp
+./a.out

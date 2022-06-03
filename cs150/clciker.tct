@@ -1,0 +1,18 @@
+4/12
+1) b(23)
+2) a(32)
+3) D(1)
+4) c(42)
+5) b(RT)
+6) D
+7) e(b & D)
+8) b(ostream&)
+9) d(istream&)
+
+pw;C02974942
+user: nnojiri
+
+
+10) c(begin)
+for(auto it = begin(v); it != end(v); it++)
+{cout <<*it;}
