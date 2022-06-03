@@ -1,0 +1,47 @@
+INSTRUCTOR TESTING H08--nnojiri
+----------------------------------------------------------------------
+Checking function: Calculate some checkDigits -------------------
+   + checkDigit(90621)->2
+   + checkDigit(92667)->0
+   + checkDigit(92659)->9
+   + checkDigit(92627)->4
+   + checkDigit(20500)->3
+   + checkDigit(1)->9
+   + checkDigit(2)->8
+   + checkDigit(3)->7
+   + checkDigit(4)->6
+   + checkDigit(5)->5
+   + checkDigit(6)->4
+   + checkDigit(7)->3
+   + checkDigit(8)->2
+   + checkDigit(9)->1
+----------------------------------------------------------------------
+  Tests passing 14/14 (100%).
+
+Checking function: Check codeDigit(). Should check for all digits -------------------
+   + codeForDigit(1)->:::||
+   + codeForDigit(2)->::|:|
+   + codeForDigit(3)->::||:
+   + codeForDigit(4)->:|::|
+   + codeForDigit(5)->:|:|:
+   + codeForDigit(6)->:||::
+   + codeForDigit(7)->|:::|
+   X codeForDigit(8): Incorrect [|:::|]
+   + codeForDigit(9)->|:|::
+   + codeForDigit(0)->||:::
+----------------------------------------------------------------------
+  Tests passing 9/10 (90%).
+
+Checking function: Checking the barCode() function. -------------------
+   X barCode(90621): Incorrect [||:|::||::::||::::|:|:::|||]
+   X barCode(92667): Incorrect [||:|::::|:|:||:::||::|:::||]
+   X barCode(92659): Incorrect [||:|::::|:|:||:::|:|:|:|::|]
+   X barCode(92627): Incorrect [||:|::::|:|:||::::|:||:::||]
+   X barCode(20500): Incorrect [|::|:|||::::|:|:||:::||:::|]
+----------------------------------------------------------------------
+  Tests passing 0/5 (0%).
+
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H08:nnojiri: ALL TESTS -- PASS 23/29 (79%).
+----------------------------------------------------------------------
+MTY0Njc3MDQ4ODpubm9qaXJpOkgwODo3OS4zMSU=

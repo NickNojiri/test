@@ -1,0 +1,43 @@
+TESTING H13--nnojiri
+----------------------------------------------------------------------
+Checking function: dataSets -------------------
+   + data/ds0.txt output lines->0->0
+   + data/notfound.txt output lines->1->1
+   + Line #1.->data/notfound.txt cannot be opened.
+   + data/ds12.txt output lines->8->8
+   + Line #1.->data set 1: total values = 9
+   + Line #2.->average value = 8.7000
+   + Line #3.->
+   + Line #4.->data set 2: total values = 18
+   + Line #5.->average value = 6.5722
+   + data/ds8.txt output lines->5->5
+   + Line #1.->data set 1: total values = 13
+   + Line #2.->average value = 4.5077
+   + Line #3.->
+   + Line #4.->data set 2: total values = 13
+   + Line #5.->average value = 5.2308
+   + data/ds13.txt output lines->17->17
+   + Line #1.->data set 1: total values = 4
+   + Line #2.->average value = 4.8000
+   + Line #3.->
+   + Line #4.->data set 2: total values = 13
+   + Line #5.->average value = 6.0538
+   + data/ds3.txt output lines->8->8
+   + Line #1.->data set 1: total values = 11
+   + Line #2.->average value = 5.4000
+   + Line #3.->
+   + Line #4.->data set 2: total values = 13
+   + Line #5.->average value = 8.0923
+   + data/ds6.txt output lines->17->17
+   + Line #1.->data set 1: total values = 5
+   + Line #2.->average value = 8.0000
+   + Line #3.->
+   + Line #4.->data set 2: total values = 21
+   + Line #5.->average value = 7.1810
+----------------------------------------------------------------------
+  Tests passing 33/33 (100%).
+
+----------------------------------------------------------------------
+H13:nnojiri:ALL TESTS -- PASS 33/33 (100%).
+----------------------------------------------------------------------
+MTY0Nzk0MTE3ODpubm9qaXJpOkgxMzoxMDAuMDAl

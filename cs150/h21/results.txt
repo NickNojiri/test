@@ -1,0 +1,12 @@
+TESTING H21--nnojiri
+----------------------------------------------------------------------
+Checking function: composite -------------------
+   + composite worked correctly for images/ReyGreenScreen.png
+   + composite worked correctly for images/leaves.png
+----------------------------------------------------------------------
+  Tests passing 2/2 (100%).
+
+----------------------------------------------------------------------
+H21:nnojiri:ALL TESTS -- PASS 2/2 (100%).
+----------------------------------------------------------------------
+MTY1MDQwMTcxMTpubm9qaXJpOkgyMToxMDAuMDAl

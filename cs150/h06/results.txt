@@ -1,0 +1,26 @@
+INSTRUCTOR TESTING H06--nnojiri
+----------------------------------------------------------------------
+Checking function: sumNums("str") -------------------
+   + sumNums("k05485o27672o")
+   + sumNums("5vcpdx7053911")
+   + sumNums("yl39x")
+   + sumNums("3mqw7n81469")
+   + sumNums("9aqu6gt1j6f4z2i7")
+   + sumNums("32rj05xorky3")
+   + sumNums("yh69m662")
+   + sumNums("415hz7n")
+   + sumNums("a70rg65h8duwchdnb15")
+   + sumNums("urce")
+   + sumNums("we69a9es6l449")
+   + sumNums("wb4x")
+   + sumNums("vll2013s")
+   + sumNums("93")
+   + sumNums("5hoco1a1e")
+   + sumNums("8c")
+----------------------------------------------------------------------
+  Tests passing 16/16 (100%).
+
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H06:nnojiri: ALL TESTS -- PASS 16/16 (100%).
+----------------------------------------------------------------------
+MTY0NjEwNTA5MDpubm9qaXJpOkgwNjoxMDAuMDAl

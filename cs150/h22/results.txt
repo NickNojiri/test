@@ -1,0 +1,22 @@
+TESTING H22--nnojiri
+----------------------------------------------------------------------
+Checking function: flip -------------------
+   + flip worked correctly for images/stegosaurus.png
+   + flip worked correctly for images/stegosaurus.png
+   + flip worked correctly for images/stegosaurus.png
+   + flip worked correctly for images/stegosaurus.png
+----------------------------------------------------------------------
+  Tests passing 4/4 (100%).
+
+Checking function: mirror -------------------
+   + mirror worked correctly for images/stegosaurus.png
+   + mirror worked correctly for images/stegosaurus.png
+   + mirror worked correctly for images/stegosaurus.png
+   + mirror worked correctly for images/stegosaurus.png
+----------------------------------------------------------------------
+  Tests passing 4/4 (100%).
+
+----------------------------------------------------------------------
+H22:nnojiri:ALL TESTS -- PASS 8/8 (100%).
+----------------------------------------------------------------------
+MTY1MDkxODMzNTpubm9qaXJpOkgyMjoxMDAuMDAl
