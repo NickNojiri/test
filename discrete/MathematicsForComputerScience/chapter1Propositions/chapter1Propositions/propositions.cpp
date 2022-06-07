@@ -53,14 +53,24 @@ int main()
         cin>> a;
         cout<<"second value \n";
         cin >> b;
-        if(cin.fail()){
-            return -1;
+        while(cin.fail()){// not correct fix with a throw catch or some type of validation
+            cin.clear();
+            cin.ignore();
+            cout<< "atleast one of the 2 values failed please enter a 1 or a 0 only \n";
+
+
+            cout<< "please enter two bool values: ";
+            bool a, b;
+            cin>> a;
+            cout<<"second value \n";
+            cin >> b;
             }
-        else{
-            cout<<"the And Or calculation is"<< endl;
-            proposition m(a,b);
-            m.print();
-            }
+            //end of validation
+
+        cout<<"the And Or calculation is"<< endl;
+        proposition m(a,b);
+        m.print();
+
     cout<<"\n \n"<< "would you like to enter a new value? (0/1): ";
     cin>> user1;
     cout<<"\n\n";
