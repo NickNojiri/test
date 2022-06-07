@@ -18,6 +18,27 @@ proposition(bool c, bool d)
     a=c;
     b=d;
 }
+void print()//
+{
+        cout<<"     P|Q      ||P&Q P|Q "<<endl;
+    if(a==1&&b==1)
+    {
+        cout<<"  TRUE|TRUE   || 1 | 1 |"<<endl;
+    }
+    else if(a==1&&b==0)
+    {
+        cout<<"  TRUE|FALSE  || 0 | 1 |"<<endl; 
+    }
+    else if(a==0&&b==1)
+    {
+        cout<<" FAlSE|TRUE   || 0 | 1 |"<<endl;
+    
+    }
+    else
+    {
+        cout<<" FAlSE|FALSE  || 0 | 0 |"<<endl; 
+    }
+}
 void print()
 {
         cout<<"     P|Q      ||P&Q P|Q "<<endl;
