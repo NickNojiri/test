@@ -1,0 +1,21 @@
+
+body{
+    /*background-color: gray;*/
+    padding: 20px;
+    font-family: sans-serif;
+    background-image: url(https://live.staticflickr.com/4391/37055093040_6fc168bcae_k.jpg);
+}
+h1, h2, p {
+    text-align: center;
+
+}
+h1:hover{
+    color:rgb(221, 6, 6);
+}
+.established{
+    color:rgba(0, 236, 51, 0.973);
+}
+h2{
+    color:rgb(12,150,250)
+}
+  
