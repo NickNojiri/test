@@ -25,4 +25,6 @@ int main (){
     for(int sleep=0; sleep< 1000000 ; ++ sleep);
   }   
   return 0; 
+  //goal make it controlable by user input now u have a base game
+  
 }

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstdio>
 #include <cstring>
-#include <cstdlib>
 
+#include <cstdlib>
 using namespace std;
 
 #define empty 0
@@ -31,6 +31,7 @@ bool SolveSudoku(int grid[N][N])
         }
     }
     return false;
+    //hold up respectfully set math is like livin in the matrix
 }
 
 /* Check for entries that don't have a value. */
