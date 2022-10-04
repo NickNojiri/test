@@ -32,3 +32,16 @@ void DArray::rotateRange(int x , int y, int z)
 {
    
 }
+//helper funtions
+bool DArray::isEmpty() const
+{
+    return (numOfElements == 0);
+}
+bool DArray::isFull() const
+{
+    return (numOfElements == capacity);
+}
+void DArray::clearArray()
+{
+    numOfElements = 0;
+}

@@ -65,7 +65,7 @@ void DoublyList::insertInOrder(int newData)
         last = first;
         ++count; //add to count1
     }
-    else if( first->getData() >= newData)
+    else if( first->getData() >= newData) //insert front data
     {
         first->setPrev(new Node( newData, nullptr ,first ));  // Node(data to insert, prev , next)
         //first->getNext()->setPrev(first); // [nullptr]->first->[ wasFirst]->[ ]
@@ -105,10 +105,10 @@ void DoublyList::insertInOrder(int newData)
         }
         else
         {
-            Node *insert = new Node( newData, pNodePrev ,pNode); // you need to make a new address for the element to be inserted allocate the space for the new node
-            pNodePrev->setNext(insert);
-            pNode->setPrev(insert);
-            ++count;
+            Node *insert = new Node( newData, pNodePrev, /*this is where in memory I trying to store current data point*/ pNode); // you need to make a new address for the element to be inserted allocate the space for the new node
+            pNodePrev->setNext(insert); //spider man needs to connect his list of nodes before we exit function
+            pNode->setPrev(insert); // there is 2 connections needed he has two friends 
+            ++count; // add to count
         }
     //this where we insert since it exits when we find the right place
         //pNode= new Node( newData, pNode->getPrev(), pNode-> getNext() );// [p] <-[pNode]-> [n]

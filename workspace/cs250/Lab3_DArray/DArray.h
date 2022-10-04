@@ -3,7 +3,10 @@
 class DArray
 {
 public:
-    // member functions    
+    // member functions 
+    bool isFull() const;
+    bool DArray::isEmpty() const;   
+    void DArray::clearArray();
     void rotateRange(int x , int y, int z);
     void rotate(int index);
     
