@@ -1,7 +1,14 @@
 #include "Vector2D.h"
 using namespace std;
-
+/*
+Author: Nicholas Nojiri
+Date: 10/12/2020
+version: 1
+name of file: Vector2D.cpp
+*/
+//to create a doxgen file
 //part 1
+//
 ostream & operator <<(ostream &out, const Vector2D &value)
 {
     out << "<"
@@ -14,6 +21,7 @@ ostream & operator <<(ostream &out, const Vector2D &value)
 }
 
 //part 2
+//
 Vector2D Vector2D::operator+(const Vector2D &parameter)const
 {
    Vector2D result(x+parameter.x,y+parameter.y);
