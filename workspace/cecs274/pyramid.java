@@ -2,21 +2,11 @@
 //cecs 274
 //October 5 2019
 
-import javax.print.attribute.standard.Sides;
+//import javax.print.attribute.standard.Sides;
 import java.util.Scanner;
 import java.util.ArrayList;
 public class pyramid {
-   public static void main(String[]args){
-       Scanner in = new Scanner(System.in);
-       System.out.println("enter the number of rows you would like to input into the pyramid" );
-       int rows = in.nextInt();
-
-       ArrayList<Integer> values = new ArrayList<Integer>();
-      
-       display(rows);
-       values.size();
-
-   }
+   
 
    public static int getweight(int r,int c) {
        if (r ==0 ){
@@ -45,3 +35,18 @@ public class pyramid {
 
 
        for(int i = 0 ;i <r; i++){
+            
+       }
+    }
+    public static void main(String[]args){
+        Scanner in = new Scanner(System.in);
+        System.out.println("enter the number of rows you would like to input into the pyramid" );
+        int rows = in.nextInt();
+ 
+        ArrayList<Integer> values = new ArrayList<Integer>();
+       
+        display(rows);
+        values.size();
+ 
+    }
+}

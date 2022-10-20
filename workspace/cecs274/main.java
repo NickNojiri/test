@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 
 
 public class main {
@@ -13,4 +13,4 @@ public static void main(String[]args){
 }
 public int letter(){  return (int)Math.random()*27;}
 public int vowel(){  return (int)Math.random()*5;}
-}
+}*/

@@ -1,4 +1,4 @@
-'''import EnglishDictionary
+import EnglishDictionary
 def print_menu():#prints the main menu to the screen. 1
     
     
@@ -245,7 +245,7 @@ main()
               user_phrase = str(input("Please input an English pharase as a string"))
           return user_phrase"""
 #   first atempt     
-"""if user_choice == 1  :
+if user_choice == 1  :
           print("1. Check a palindrome")
           choice_1 == 1
           return choice_1
@@ -258,5 +258,5 @@ main()
           
     if user_choice == 3  :
           choice_3 == 3
-          return choice_3"""
-          '''
+          return choice_3
+          

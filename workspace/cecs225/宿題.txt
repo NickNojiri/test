@@ -1,0 +1,175 @@
+module t_mips;
+  reg clk, reset;  		reg  [7:0] memdata;
+  wire memread, memwrite;	wire [7:0] adr, writedata;
+  integer clockcycles, i, rtypes, lbs, sbs, beqs, js, iis, is;
+  reg [7:0] m_i;
+  reg [2:0] r_i;
+  
+  always #5 clk = ~ clk;	//clock pulse generation
+  
+  //instantiate the MIPS Processor
+  mips dut(clk, reset, memdata, memread, memwrite, adr, writedata);
+    
+  //Memory, lower addresses contain instructions
+  reg [7:0]	RAM [255:0];		//256x8 RAM
+  always @(memread, memwrite, adr, writedata)
+  begin
+	memdata = memread ? RAM[adr] : 8'hxx;
+	if(memwrite) RAM[adr] = writedata;
+  end
+
+
+/*****************************************************************************************/
+/********************Regiseter and Memory Initialization section*************************/	
+/*****************************************************************************************/
+  //Initialize registers, text segment, and code segment  
+
+  initial begin	
+	
+	//initialize some registers
+    dut.dp.rf.RAM[0] = 8'h40;	//$0 = 0x00
+    dut.dp.rf.RAM[1] = 8'h41;	//$1 = 0x40	(register 1 points to data memory base address)
+    RAM[dut.dp.rf.RAM[0]] = 0;
+    RAM[8'h41] = 1;
+ 
+  end
+  initial begin
+
+	//.text: RAM locations 0x40 -> 0x7F 
+	//initialize memory locations with instructions
+	//lb $2, 0($1): 32'h80220000;
+    for(i=2;i<=7; i=i+1)begin
+      dut.dp.rf.RAM[i] = dut.dp.rf.RAM[i-1]-dut.dp.rf.RAM[i-2]+dut.dp.rf.RAM[i-1];
+      RAM[dut.dp.rf.RAM[i]] = RAM[dut.dp.rf.RAM[i-1]]+RAM[dut.dp.rf.RAM[i-2]];
+    end
+  end
+/*****************************************************************************************/
+/*
+   LB
+   SB
+   BEQ
+   J
+   RTYPE
+	add
+	sub
+	and
+	or
+	slt
+  */
+  initial begin
+	rtypes=0; lbs=0; sbs=0; beqs=0; js=0; iis=0; is=0;
+	clockcycles = 0;
+    clk = 0;
+    reset = 1;
+	@(posedge clk) #1 reset = 0;
+	$display("Initial contents of registers and data segment addresses");
+	regdump();	memdump();
+	$display("");
+	
+	while(1)begin
+		#3;
+		if(dut.instr == 32'h1000ffff)
+		begin
+			$display("Halt Instruction was encountered!");
+			$display("Total Clock Cycles: %d",clockcycles);
+			$display("");
+			$display("FINAL CONTENTS OF REGISTERS AND DATA SEGMENT ADDRESSES");
+			#1 	regdump();	memdump();	instrsummary();
+			$finish;
+		end
+	end
+  end
+  //update clock cycle count and announce new instruction
+  always @(posedge clk)
+	begin	#5	//	rtypes=0; lbs=0; sbs=0; beqs=0; js=0; iis=0; is=0;
+		if(dut.cont.state == 1)	is = is+1;
+		case(dut.cont.state)
+		4'b0001:	begin $display("");
+					$display("CC: %d|\tFETCH1: fetching low byte of an instruction from RAM[0x%h]",clockcycles,dut.dp.pc); end
+		4'b0010:	begin $display("CC: %d|\tFETCH2: fetching second byte of an instruction from RAM[0x%h]",clockcycles,dut.dp.pc); end
+		4'b0011:	begin $display("CC: %d|\tFETCH3: fetching third byte of an instruction from RAM[0x%h]",clockcycles,dut.dp.pc); end
+		4'b0100:	begin $display("CC: %d|\tFETCH4: fetching high byte of an instruction from RAM[0x%h]",clockcycles,dut.dp.pc); end
+		4'b0101:	begin $display("CC: %d|\tDECODING THE INSTRUCTION",clockcycles); end
+          4'b0110:	begin $display("CC: %d|\tMemory Address calculation for a load or store",clockcycles);end
+		4'b0111:	begin $display("CC: %d|\tlb $%h, 0x%h($%h) is reading from RAM[0x%h]",clockcycles,dut.instr[20:16],dut.instr[15:0],dut.instr[25:21],adr); 
+					lbs=lbs+1; end
+		4'b1000:	$display("CC: %d|\tlb $%h, 0x%h($%h) is writing 0x%h to $%h",clockcycles,dut.instr[20:16],dut.instr[15:0],dut.instr[25:21],dut.dp.wd,dut.instr[20:16]);
+          4'b1001:	begin $display("CC: %d|\tsb $%h, 0x%h($%h)is writing 0x%h to RAM[0x%h]",clockcycles,dut.instr[20:16],dut.instr[15:0],dut.instr[25:21], writedata,adr);
+					sbs=sbs+1; end
+		4'b1100:	begin 
+					$display("CC: %d|\tbeq $%h, $%h, %h is executing",clockcycles,dut.instr[25:21],dut.instr[20:16],dut.instr[15:0]);
+					beqs=beqs+1; 
+					if(dut.dp.zero == 1'b1)
+						$display("\t\t\tBranch TAKEN!");
+					else if(dut.dp.zero == 1'b0)
+						$display("\t\t\tBranch NOT taken");
+					end
+		4'b1101:	begin $display("CC: %d|\tj %h is executing",clockcycles,{4'b0000,dut.instr[25:0],2'b00});
+					js=js+1;end
+		4'b1010:	begin
+						rtypes = rtypes + 1;
+						case(dut.ac.funct)
+						6'b100000: $display("CC: %d|\tadd $%h, $%h, $%h",clockcycles,dut.instr[15:11], dut.instr[25:21], dut.instr[20:16]);
+						6'b101010: $display("CC: %d|\tslt $%h, $%h, $%h",clockcycles,dut.instr[15:11], dut.instr[25:21], dut.instr[20:16]);
+						6'b100010: $display("CC: %d|\tsub $%h, $%h, $%h",clockcycles,dut.instr[15:11], dut.instr[25:21], dut.instr[20:16]);
+						6'b100100: $display("CC: %d|\tand $%h, $%h, $%h",clockcycles,dut.instr[15:11], dut.instr[25:21], dut.instr[20:16]);
+						6'b100101: $display("CC: %d|\tor $%h, $%h, $%h",clockcycles,dut.instr[15:11], dut.instr[25:21], dut.instr[20:16]);
+						default: begin
+							iis = iis + 1;
+							$display("CC: %d|\tInvalid R-Type Instruction!!!",clockcycles);
+							$display("\t\t\tFunct = %b",dut.ac.funct); end
+						endcase
+					end
+		4'b1011:	begin $display("CC: %d|\tR-Type Instruction is writing 0x%h to $%h",clockcycles,dut.dp.wd,dut.instr[15:11]);end
+		default:	$display("INVALID PROCESSOR STATE!!!!");
+		endcase
+		clockcycles = clockcycles + 1;
+	end
+	
+	always @(posedge clk) begin	//force a HALT if too many clock cycles have elapsed
+		if(clockcycles > 500)
+		begin
+			$display("");
+			$display("*********************************");
+			$display("**********Forcing HALT!**********");
+			$display("*********************************");
+			regdump();	memdump();	instrsummary();
+			$display("*********************************");
+			$finish;
+		end
+	end
+  
+  task regdump;
+	begin
+	$display("The Contents of Registers Are:");
+	r_i = 0;
+	for(i = 0; i < 4; i = i + 1)
+	begin
+		$display("$%h = 0x%h,\t$%h = 0x%h",r_i,dut.dp.rf.RAM[r_i],r_i+3'h4,dut.dp.rf.RAM[r_i+4]);
+		r_i = r_i + 1;
+	end
+	$display("");
+	end
+  endtask
+  task memdump;
+  begin
+	$display("The data segment contents from RAM[0x40] to RAM[0x4f] are:");
+	for(m_i = 0; m_i < 8; m_i = m_i + 1)
+		$display("RAM[0x%h] = 0x%h,\tRAM[0x%h] = 0x%h",m_i+8'h40, RAM[m_i+8'h40],m_i+8'h48, RAM[m_i+8'h48]);
+		end
+  endtask
+  task instrsummary; //	rtypes=0; lbs=0; sbs=0; beqs=0; js=0; iis=0; is=0;
+  begin
+	$display("Instruction execution summary");
+	$display("%d load bytes executed",lbs);
+	$display("%d store bytes executed",sbs);
+	$display("%d branch if equals executed",beqs);
+	$display("%d jumps executed",js);
+	$display("%d R-Type instructions executed",rtypes);
+	$display("\t%d R-Type instructions were invalid",iis);
+	$display("One Halt instruction would have been executed unless the program timed out");
+	$display("%d total instructions executed",is);
+  end
+  endtask
+endmodule
+
