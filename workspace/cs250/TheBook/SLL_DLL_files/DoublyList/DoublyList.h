@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iostream>
-
+#include <queue>
 class Node
 {
 public:
@@ -16,6 +16,7 @@ public:
 	void setData(int theData) { data = theData; }
 	void setPrev(Node* prevLink) { prev = prevLink; }
 	void setNext(Node* nextLink) { next = nextLink; }
+	
 	~Node(){}
 private:
 	int data;   
@@ -29,7 +30,7 @@ public:
 	DoublyList() : first(nullptr), last(nullptr), count(0) {}
 
 	// member functions
-	
+	void function3(queue<int>&)const;
 	void clearList();
 	~DoublyList();
 

@@ -1,12 +1,12 @@
 import java.util.Random;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 //import java.util.Scanner;
 public class Deck {
     private Card[] storage;
     private int top;
 
-    public Deck() {
+    public Deck(){
         char[] suits = {'H', 'D', 'S', 'C'};
         char[] rank = {'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'};
         storage = new Card[52];
@@ -58,7 +58,7 @@ public class Deck {
         }
     }
 
-    public void shuffle() {
+    public void shuffle(){
        /* Random rand = new Random();
         int in;
         for (int i = 0; i < 52; i++) {
@@ -75,7 +75,7 @@ public class Deck {
         }
         */
 
-        Random rand = new Random():
+        Random rand = new Random();
         Card temp;
 
         for(int i = 0; i < 52; i++)
@@ -110,3 +110,4 @@ public class Deck {
 
         return true;
     }
+}

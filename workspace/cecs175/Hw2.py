@@ -1,4 +1,5 @@
 import EnglishDictionary
+"""
 def print_menu():#prints the main menu to the screen. 1
     
     
@@ -41,10 +42,10 @@ def get_phrase(): #    3
     #    i. No other functions are called from get_phrase.
           
         
-        user_phrase = ""
-        while user_phrase == "":
-            user_phrase = str(input("please enter an english phrase"))
-        return user_phrase
+    user_phrase = ""
+    while user_phrase == "":
+        user_phrase = str(input("please enter an english phrase"))
+    return user_phrase
 
    
         
@@ -94,8 +95,6 @@ def is_palindrome(phrase): # done and checked "No "x" in nixon" 4
 
     while start_of_phrase < end_of_phrase :
 #   will check if the indexes are infact letters to compeare
-
-        
         print(start_of_phrase, end_of_phrase)
         
         if not lower_phrase[start_of_phrase].isalpha():
@@ -114,7 +113,7 @@ def is_palindrome(phrase): # done and checked "No "x" in nixon" 4
              if lower_phrase[start_of_phrase] !=  lower_phrase[end_of_phrase] :
 
 #          if it not equal return false
-                 return False
+                return False
 #END OF IF                
              start_of_phrase += 1
              end_of_phrase -= 1
@@ -236,19 +235,19 @@ def main():
 main()
     
 #end now
-"""  user_phrase = str(input("Please input an English phrase as a string"))
+///  user_phrase = str(input("Please input an English phrase as a string"))
           check_front = "A"
           check_back = "z"
           #validation with assi code?
           while (user_phrase < check_front or user_phrase > check_back):
           
               user_phrase = str(input("Please input an English pharase as a string"))
-          return user_phrase"""
+          return user_phrase///
 #   first atempt     
 if user_choice == 1  :
-          print("1. Check a palindrome")
-          choice_1 == 1
-          return choice_1
+    print("1. Check a palindrome")
+    choice_1 == 1
+    return choice_1
           
           
     if user_choice == 2  :
@@ -258,5 +257,5 @@ if user_choice == 1  :
           
     if user_choice == 3  :
           choice_3 == 3
-          return choice_3
-          
+          return choice_3  
+          """

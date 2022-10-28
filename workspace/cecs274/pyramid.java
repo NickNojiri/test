@@ -47,6 +47,6 @@ public class pyramid {
        
         display(rows);
         values.size();
- 
+        in.close();
     }
 }

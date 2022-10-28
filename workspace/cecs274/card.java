@@ -49,7 +49,7 @@ public class Card {
     
     
         }//end of display
-        public int getValue(){
+        public int getSuit(){
     
             return suit; //int
         }//end of getValue()

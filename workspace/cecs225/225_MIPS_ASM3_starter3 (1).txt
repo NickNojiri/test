@@ -148,20 +148,3 @@ for2_loop:
 	addi $3, $3, 1	
 	j for2_loop
 end_for:
-	 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

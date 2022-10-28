@@ -1,4 +1,4 @@
-import org.w3c.dom.Node;
+
 
 public class linked {
    // linked mylist= new linked();
@@ -6,14 +6,11 @@ public class linked {
 
     public linked() {
         head = null;
-
-
-
     }
 
     public void display() {
         node temp = head;
-        while (temp != null) ;
+        while (temp.getNext() != null) ;
         {
             temp.display();
             temp = temp.getNext();
@@ -25,22 +22,34 @@ public class linked {
       temp.setNext(head);
       head = temp;
     }
-    public void addinOrder(int x){
+   /*  public void addinOrder(int x){
+        if()
+        {
 
-    }
+        }
+        else
+        {
+            while(temp.getNext()<x )
+            {
+                ;//itterate till >x
+            }
+        }
+    }*/
     public int size(){
         node temp = head;
         int c=0;
-        while (temp != null) ;
+        while (temp.getNext() != null) ;
         {
             //temp.display();
             temp = temp.getNext();
             c+=1;
-        return c; }
+        return c; 
+        }
+    }
+    /*public static void printList(node head)
+    {
 
-    public static void printList(node head){
-
-    } 
+    } */
 
 
 }
