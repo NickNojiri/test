@@ -27,7 +27,7 @@ void function1(map<int , int>& aMap, const list<int>& aList, set<int>& aSet, int
 }
 
 //part 2
-void DoublyList::function3(queue<int>& aQueue)const
+void DoublyList::binarySearch(queue<int>& aQueue)const
 {
    Node* left = first;
    Node* right = last;
