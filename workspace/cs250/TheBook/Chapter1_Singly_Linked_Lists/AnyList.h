@@ -20,17 +20,23 @@ private:
     	Node *ptrToNext; // Pointer that points to next node.
 };
 
-
+// add a ptr to last
 class AnyList
 {
 public:
 	AnyList() : ptrToFirst(nullptr), count(0) {}
 
 	void insertFront(int);	
-
+	void insertBack(int);
 	void print() const;
-
+    int getLastElem() const;
 	void clearList();
+	int getLastElem() const;
+	bool allOdds() const;
+	void deleteFirstNode();
+    bool compareLists(const AnyList& otherList) const;
+	
+
 	~AnyList();
 
 private:

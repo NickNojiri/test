@@ -47,14 +47,14 @@ void AnyList::clearList()
     {
         ptrToFirst = ptrToFirst->getPtrToNext();
         delete temp;
-        temp = ptrToFirst;
+		temp = ptrToFirst;
     }
-
 	// Update the count outside the loop.
    	count = 0;
+	
 }
 
 AnyList::~AnyList()
 {
-     clearList();
+    clearList();
 }

@@ -23,7 +23,7 @@ int main()
 	// to insert the following integers in this order: 
 	// 2, 7, 5, 6, 9, 1 and 3.
 
-	set<int> set1= {2,7,5,6,9,1,3};
+	set<int> set1 = {2,7,5,6,9,1,3};
 	// Print the set using the printSet function you implemented.
 	printSet(set1);
 	
@@ -104,6 +104,10 @@ int main()
 		{1,5},
 		{2,5}
 	};
+	map<int,string> map2;
+	map2[123] = "nick";
+	map2[456] = "james";
+	map2[122] = "harold";
 
 	map<int, string> map3{
 		{ 329, "Jeff" },
@@ -124,7 +128,11 @@ int main()
 	{
 		cout << "("<< i.first << ","<< i.second <<")" << " ";
 	}
-
+	cout << endl;
+	for(auto elem : map2)
+	{
+		cout<< elem.first	<< ","<< elem.second<< endl;
+	}
 	cout << "\n\n----------------------------------------------------";
 
 	cout  <<  endl;

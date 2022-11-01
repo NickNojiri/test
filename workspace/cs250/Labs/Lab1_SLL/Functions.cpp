@@ -15,22 +15,29 @@ using namespace std;
 int AnyList::getLastElem() const
 {
    //first case of the function the empty set
-   if(count ==0){
+   if(count == 0){
       cerr<<"The list is empty.\n";
       return 0;// zero is to satisfiy the int return type
    }
-   // to solve this program i shall use 2 addresses in memory and itter till the next value hits null ptr
-   Node* current = ptrToFirst;
-   Node* next = current->getPtrToNext();
-   while( next != nullptr)
+   Node* last = ptrToFirst;
+   for(int i = 0; i < count; ++i)
    {
-      current= current->getPtrToNext();
+      last = last->getPtrToNext();
+   }
+   return last->getData();
+}
+   // to solve this program i shall use 2 addresses in memory and itter till the next value hits null ptr
+/* Node* current = ptrToFirst;
+   Node* next = current->getPtrToNext(); 
+   while(next != nullptr)
+   {
+      current = current->getPtrToNext();
       next = next->getPtrToNext();// trailing value
-      
    }
    //static memory no use for delete()
    return current->getData();
-}
+}*/
+
 
 // Part 2
 bool AnyList::allOdds() const
@@ -41,14 +48,13 @@ bool AnyList::allOdds() const
       return false;
    }
    bool result;
-   Node* current= ptrToFirst;
-   while(current!=nullptr){
-      
-      if(current->getData() %2 == 0){
-         result=false;
+   Node* current = ptrToFirst;
+   while(current != nullptr){
+      if(current->getData() % 2 == 0){
+         result = false;// return
          break;
       }
-      if(current->getPtrToNext()==nullptr){// quick peek
+      if(current->getPtrToNext() == nullptr){// quick peek
          result = true;
       }
       current = current->getPtrToNext();
@@ -87,10 +93,10 @@ void AnyList::deleteFirstNode(){
             result = false;
             break;
          }
-         current= current->getPtrToNext();// next
+         current = current->getPtrToNext();// next
          otherCurrent = otherCurrent->getPtrToNext();// next
       }
-      if(current==nullptr){// Because of our assumption we know the list is not a empty list. So nullptr must a value that means we exited the loop with completion as in turring complete return 00
+      if(current == nullptr){// Because of our assumption we know the list is not a empty list. So nullptr must a value that means we exited the loop with completion as in turring complete return 00
          result = true;
       }
    }// else
