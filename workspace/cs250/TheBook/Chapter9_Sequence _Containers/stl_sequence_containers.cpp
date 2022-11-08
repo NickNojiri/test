@@ -24,7 +24,7 @@ int main()
 	// Use function push_back to insert the following values 
 	// in v1: 12, 73, 41, 38, 25, 56, an 63 in this order.
 	v1.push_back(12);
-	v1.push_back(73); //...
+	v1.push_back(73); 
 	v1.push_back(41);
 	v1.push_back(38);
 	v1.push_back(25);
@@ -41,10 +41,11 @@ int main()
 
 	// Use a FOR loop to print out the vector.
 	// Do NOT use an iterator.
-	for(int i = 0; i < sizeV1; i++)//for(const auto& element :v1)
+	for(const auto& elem: v1)//for(const auto& element :v1)
 	{
-		cout<< v1[i] <<" ";
+		cout<< elem <<" ";
 	}
+	
 
 	//void clear() noexcept;
 	// Call the function clear on vector v1.
@@ -52,7 +53,7 @@ int main()
 
 	// size_type size() const noexcept;
 	// Call function size to print the size of v1.
-	cout<< v1.size() <<endl;
+	cout<< '\n' <<v1.size() <<endl;
 
 	// size_type capacity() const noexcept;
 	// Call function capacity to output the capacity of v1.
@@ -69,7 +70,7 @@ int main()
 	// Use function assign to copy elements 12, 13, 14, 15, and 
 	// 16 from the array into v2.
 	// One statement only.
-	v2.assign(arr+3,arr+7);
+	v2.assign(arr+2,arr+7);
 
 	// Call the function printVector to print v2.
 	printVector(v2);
@@ -205,6 +206,7 @@ int main()
 	// returns an iterator, but if we do not intend to use it, 
 	// we can ignore it.)
 	v5.erase(iterVector5);
+	
 
 	// Call the function printVector to print v5 again.
 	printVector(v5);
@@ -217,7 +219,6 @@ int main()
 		v6.push_back(i+100);
 	}
 
-	printVector(v6);
 	// Using the copy constructor, create a vector 
 	// named v7, a copy of v6.
 	vector<int> v7(v6);
