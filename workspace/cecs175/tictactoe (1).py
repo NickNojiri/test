@@ -14,7 +14,6 @@ def print_board(board):
                 print("O ", end="")
         print("")
 
-
 def is_valid(r, c, board):
     if (c<0 or c>2)or(r<0 or r>2):
         return False
@@ -30,7 +29,7 @@ def is_winner(board):
             return True
     for row in range(3):
         col = 0
- #h
+#h
 
         if board[row][col] == board[row][col+1] == board[row][col+2] and board[row][col] != 0:
                 return True

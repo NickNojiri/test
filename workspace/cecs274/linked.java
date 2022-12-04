@@ -1,5 +1,4 @@
 
-
 public class linked {
    // linked mylist= new linked();
    private node head;

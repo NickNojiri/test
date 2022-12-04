@@ -9,7 +9,7 @@ w = int(input("#of walks"))   #1
 s = int(input("#of singles"))  #1
 d = int(input("#of doubles"))  #2
 t = int(input("#of triples"))  #3
-hr=  int(input("#of hr"))      #4
+hr =  int(input("#of hr"))      #4
 
 print("")
 #end of userinp

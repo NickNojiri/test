@@ -40,7 +40,8 @@ int main()
 		{ 713, "Karl" },
 		{ 258, "Mary" },
 		{ 736, "Karl" },
-		{ 412, "Burt" }
+		{ 412, "Burt" },
+		{ 411, "Burt" }
 	};
 
 	cout << "\nmap3 = ";

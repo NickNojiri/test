@@ -11,11 +11,11 @@ numseats_a = int(input("The number of tickets purchased for Class A? :"))
 numseats_b = int(input("The number of tickets purchased for Class B :"))
 #gets an integer number from the user on how many tickets purchased for class C
 numseats_c = int(input("The number of tickets purchased for Class C? :"))
+
 print("The number of seats purchased by Class A is:", numseats_a)
 print("The number of seats purchased by Class B is:", numseats_b)
 print("The number of seats purchased by Class C is:", numseats_c)
     
-
 #number of tickets purchased for class A multiplied by $50
 cost_A = numseats_a * 50
 #number of tickets purchased for class B multiplied by $25
