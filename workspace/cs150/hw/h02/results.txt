@@ -1,0 +1,16 @@
+INSTRUCTOR TESTING H02--nnojiri
+----------------------------------------------------------------------
+ X Cannot find output inside [] for 15 100 100. Cannot run this test.
+ X Cannot find output inside [] for 45400 100 100. Cannot run this test.
+ X Cannot find output inside [] for 1 1000 275. Cannot run this test.
+ X Cannot find output inside [] for 20 250 350. Cannot run this test.
+ X Cannot find output inside [] for 30 285 295. Cannot run this test.
+ X Cannot find output inside [] for 40 320 240. Cannot run this test.
+ X Cannot find output inside [] for 50 355 185. Cannot run this test.
+ X Cannot find output inside [] for 60 390 130. Cannot run this test.
+ X Cannot find output inside [] for 70 425 75. Cannot run this test.
+ X Cannot find output inside [] for 80 460 20. Cannot run this test.
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H02:nnojiri: ALL TESTS -- PASS 0/10 (0%).
+----------------------------------------------------------------------
+MTY0NDk2NjE3Njpubm9qaXJpOkgwMjowLjAwJQ==

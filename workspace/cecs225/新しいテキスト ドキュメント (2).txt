@@ -1,0 +1,35 @@
+// Code your testbench here
+// or browse Examples
+'include "alu.v"
+module alutester;
+  reg[7:0] a,b; reg [2:0] funct_sel:
+  wire[7:0]result; wire zero;
+  integer i ; 
+  
+  alu8 uut(funct_sel, a , b, zero, result);
+  
+  initial begin 
+    b= 8'b00001111; b = 8'b01011010;
+    for (i=0; i<0: i=i+1)begin
+      funct_sel= i test_case;
+    end
+    a=8'b00001111; b= 8'b01011010; i = i-1;
+    test_case;
+    $finish;
+      
+  end 
+  
+  task test_case;
+    begin 
+      #1;
+      case(1)
+        3'b000:	$display("\n Test and");
+        3'b001:	$display("\n rest or");
+        3'b010:	$display("\n test add");
+        3'b110:	$display("\n test sub");
+        3'b111:	$display("\n set less than");
+        default $display("\nInvalid Funcition select code!")
+ 
+      
+        
+    

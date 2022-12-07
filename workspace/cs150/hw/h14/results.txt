@@ -1,0 +1,79 @@
+TESTING H14--nnojiri
+----------------------------------------------------------------------
+Checking function: getLine -------------------
+
+ 1. Make sure getLine returns the text you entered
+   + "This is a line of text" <-input : result-> "This is a line of text"
+   + "Another line of input" <-input : result-> "Another line of input"
+   + "" <-input : result-> ""
+
+ 2. Prompt prints correctly
+   + Prompt "Enter a number:"-> "Enter a number: "
+   + Prompt "Enter a number: "-> "Enter a number: "
+   + Prompt ""-> ""
+----------------------------------------------------------------------
+  Tests passing 6/6 (100%).
+
+Checking function: getInt -------------------
+
+ 3. Returns values correctly with/without spaces
+   + getInt()<-"123"->123
+   + getInt()<-"  256  "->256
+
+ 4. Prints the prompt correctly and returns values
+   + Prompt "Enter an int:"-> "Enter an int: "
+   + getInt()<-" 125 "->125
+   + Prompt "Enter a number:   "-> "Enter a number:   "
+   + getInt()<-" 215 "->215
+   + Prompt ""-> ""
+   + getInt()<-" 115 "->115
+
+ 5. Try different combinations of bad input.
+   + getInt()<-"25.25\n235\n"->235
+   + getInt()<-"25 extra\n135\n"->135
+   + getInt()<-"one\n-752\n"->-752
+----------------------------------------------------------------------
+  Tests passing 11/11 (100%).
+
+Checking function: getReal -------------------
+
+ 6. Make sure getReal returns values correctly
+   + getReal()<-"123."->123.000000
+   + getReal()<-"  .256  "->0.256000
+   + getReal()<-" 1.0e-15  "->0.000000
+   + getReal()<-"2.2534E5"->225340.000000
+
+ 7. Make sure getReal prints the prompt correctly and returns values
+   + Prompt "Enter a real number:"-> "Enter a real number: "
+   + getReal()<-" 125.25 "->125.250000
+   + Prompt "Enter a number:   "-> "Enter a number:   "
+   + getReal()<-" 215.21E2 "->21521.000000
+   + Prompt ""-> ""
+   + getReal()<-"2e-3"->0.002000
+
+ 8. Try different combinations of bad input.
+   + getReal()<-"25.25 extra\n115.25\n"->115.250000
+   + getReal()<-"0b010101\n1.35\n"->1.350000
+   + getReal()<-"one\n-.752\n"->-0.752000
+----------------------------------------------------------------------
+  Tests passing 13/13 (100%).
+
+Checking function: getYN -------------------
+
+ 9. Handles upper and lower case correctly
+   + getYN()<-"Yes"-> true
+   + getYN()<-"yep  "-> true
+   + getYN()<-"nada"-> false
+   + getYN()<-"Nope  "-> false
+
+10. Different combinations of bad input.
+   + getYN()<-"OK\nyep\n"-> true
+   + getYN()<-"true\nn\n"-> false
+   + getYN()<-"fine\nY\n"-> true
+----------------------------------------------------------------------
+  Tests passing 7/7 (100%).
+
+----------------------------------------------------------------------
+H14:nnojiri:ALL TESTS -- PASS 37/37 (100%).
+----------------------------------------------------------------------
+MTY0Nzk0NTgyNzpubm9qaXJpOkgxNDoxMDAuMDAl

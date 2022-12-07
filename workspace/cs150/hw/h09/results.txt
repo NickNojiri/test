@@ -1,0 +1,44 @@
+INSTRUCTOR TESTING H09--nnojiri
+----------------------------------------------------------------------
+Checking function: Tests for toRoman() -------------------
+   X toRoman(0): Incorrect [ERROR: none]
+   + toRoman(2084)->MMLXXXIV
+   + toRoman(835)->DCCCXXXV
+   + toRoman(5)->V
+   + toRoman(3766)->MMMDCCLXVI
+   + toRoman(1568)->MDLXVIII
+   + toRoman(883)->DCCCLXXXIII
+   + toRoman(645)->DCXLV
+   + toRoman(3011)->MMMXI
+   + toRoman(1625)->MDCXXV
+----------------------------------------------------------------------
+  Tests passing 9/10 (90%).
+
+Checking function: Tests for ones() -------------------
+   X ones(4): Incorrect []
+   X ones(6): Incorrect []
+   X ones(2): Incorrect []
+   X ones(8): Incorrect []
+----------------------------------------------------------------------
+  Tests passing 0/4 (0%).
+
+Checking function: Tests for tens() -------------------
+   X tens(1): Incorrect []
+   X tens(7): Incorrect []
+   X tens(5): Incorrect []
+   X tens(9): Incorrect []
+----------------------------------------------------------------------
+  Tests passing 0/4 (0%).
+
+Checking function: Tests for hundreds() -------------------
+   X hundreds(6): Incorrect []
+   X hundreds(7): Incorrect []
+   X hundreds(1): Incorrect []
+   X hundreds(4): Incorrect []
+----------------------------------------------------------------------
+  Tests passing 0/4 (0%).
+
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H09:nnojiri: ALL TESTS -- PASS 9/22 (41%).
+----------------------------------------------------------------------
+MTY0Njc3MDcyMDpubm9qaXJpOkgwOTo0MC45MSU=

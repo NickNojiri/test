@@ -1,0 +1,38 @@
+INSTRUCTOR TESTING H10--nnojiri
+----------------------------------------------------------------------
+Checking function: read with int -------------------
+   + Prompt printed->How old are you? 
+   + Bad input checked
+   + Age set correctly->42
+   + Good input checked
+   + Trailing input retained
+----------------------------------------------------------------------
+  Tests passing 5/5 (100%).
+
+Checking function: read (with double) -------------------
+   + Prompt printed->What is your gpa? 
+   + Bad input checked
+   + GPA set correctly
+   + Good input checked
+   + Trailing input discarded
+----------------------------------------------------------------------
+  Tests passing 5/5 (100%).
+
+Checking function: read (with string) -------------------
+   + Prompt printed->What is your full name? 
+   + Reads whole name->Stephen Dean Gilbert
+   X Reads one word: Incorrect [Stephen Dean Gilbert]
+----------------------------------------------------------------------
+  Tests passing 2/3 (67%).
+
+Checking function: read (with char) -------------------
+   + Read sentinel, return false
+   + Not sentinel, return true
+   + Correctly set ch when reading->43
+----------------------------------------------------------------------
+  Tests passing 3/3 (100%).
+
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H10:nnojiri: ALL TESTS -- PASS 15/16 (94%).
+----------------------------------------------------------------------
+MTY0NzMyMzIzMjpubm9qaXJpOkgxMDo5My43NSU=

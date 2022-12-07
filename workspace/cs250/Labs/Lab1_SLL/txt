@@ -1,0 +1,29 @@
+    if( first->getData() >= newData )
+{
+first = new Node( newData, nullptr ,first ); // Node(data to insert, prev , next)
+first->getNext()->setPrev(first); // [nullptr]->first->[ wasFirst]->[ ]
+}
+
+//2)insert last:
+    else if ( last->getData() <= newData )
+    {
+        last = new Node( newData, last, nullptr );
+        last->getPrev()->setNext(last); // [prev->setNext-->]<-->[last]
+    }
+//this is the current case I am working on and have had trouble with
+
+//3)insert middle:
+else
+{
+Node pNode = first;
+while (pNode->getData() < newData) //exit it location found
+// I know this statment will not hit nullptr bc there is
+//atleast one value in p->getData() that is both greater than newData and less than newData if == insert
+{
+pNode = pNode->getNext();
+}
+//this where we insert since it exits when we find the right place
+pNode = new Node( newData, pNode->getPrev(), pNode-> getNext() ); //[p] <-[pNode]-> [n]
+pNode->getPrev->setNext( pNode );
+pNode->getNext->setPrev( pNode );
+}

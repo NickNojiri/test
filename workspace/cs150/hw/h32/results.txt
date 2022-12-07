@@ -1,0 +1,32 @@
+INSTRUCTOR TESTING H32--nnoji
+----------------------------------------------------------------------
+Checking function: operator[] -------------------
+   + img[0]->(255, 255, 255, 255)
+   + img[6919]->(255, 255, 255, 255)
+   + img[17614]->(255, 222, 21, 255)
+   + img[5116]->(255, 255, 255, 255)
+   + img[11431]->(25, 64, 245, 55)
+   + img[48676]->(26, 65, 246, 55)
+   + img[52005]->(27, 66, 247, 55)
+   + Correctly catches out_of_range.
+----------------------------------------------------------------------
+  Tests passing 8/8 (100%).
+
+Checking function: translate -------------------
+   + translate(50, 0) works correctly.
+   + translate(-72, 0) works correctly.
+   + translate(385, 0) works correctly.
+   + translate(-415, 0) works correctly.
+   + translate(0, 88) works correctly.
+   + translate(0, -93) works correctly.
+   + translate(0, 425) works correctly.
+   + translate(0, -465) works correctly.
+   + translate(83, 91) works correctly.
+   + translate(-91, 151) works correctly.
+----------------------------------------------------------------------
+  Tests passing 10/10 (100%).
+
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H32:nnoji: ALL TESTS -- PASS 18/18 (100%).
+----------------------------------------------------------------------
+MTY1MzI5MzA0MTpubm9qaTpIMzI6MTAwLjAwJQ==

@@ -1,0 +1,25 @@
+INSTRUCTOR TESTING H05--nnojiri
+----------------------------------------------------------------------
+Checking function: toFrenchGender("country") -------------------
+   + toFrenchGender("Guyane")->la Guyane
+   + toFrenchGender("Portugal")->le Portugal
+   + toFrenchGender("Bresil")->le Bresil
+   + toFrenchGender("iles Galapagos")->les iles Galapagos
+   X toFrenchGender("Honduras"): Incorrect [les Honduras]
+   + toFrenchGender("Norvege")->la Norvege
+   + toFrenchGender("Argentine")->l'Argentine
+   + toFrenchGender("Barbade")->la Barbade
+   X toFrenchGender("Etats-Unis"): Incorrect [l'Etats-Unis]
+   + toFrenchGender("Ecosse")->l'Ecosse
+   + toFrenchGender("Cuba")->Cuba
+   + toFrenchGender("Bahamas")->les Bahamas
+   + toFrenchGender("Monaco")->Monaco
+   + toFrenchGender("iles Malouines")->les iles Malouines
+   + toFrenchGender("Liechtenstein")->le Liechtenstein
+----------------------------------------------------------------------
+  Tests passing 13/15 (87%).
+
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H05:nnojiri: ALL TESTS -- PASS 13/15 (87%).
+----------------------------------------------------------------------
+MTY0NTY3NTgxNTpubm9qaXJpOkgwNTo4Ni42NyU=

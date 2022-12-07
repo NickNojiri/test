@@ -1,0 +1,1 @@
+print("\"Bee Movie Script According to all known laws of aviation, \n there is no way a bee \nshould be able to fly. \nIts wings are too small to get \n its fat little body off the ground. \nThe bee, of course, flies anyway \nbecause bees don't care \nwhat humans think is impossible.\"")

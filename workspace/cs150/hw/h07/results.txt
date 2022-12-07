@@ -1,0 +1,67 @@
+INSTRUCTOR TESTING H07--nnojiri
+----------------------------------------------------------------------
+Checking function: everyNth -------------------
+   X everyNth("Miracle", 2): Incorrect []
+   X everyNth("abcdefg", 3): Incorrect []
+   X everyNth("abcdefg", 2): Incorrect []
+   X everyNth("Chocolate", 3): Incorrect []
+   X everyNth("Chocolates", 3): Incorrect []
+   X everyNth("Chocolates", 4): Incorrect []
+   X everyNth("Chocolates", 100): Incorrect []
+----------------------------------------------------------------------
+  Tests passing 0/7 (0%).
+
+Checking function: zipZap -------------------
+   X zipZap("zipXzap"): Incorrect [zipXzap]
+   X zipZap("zopzop"): Incorrect [zopzop]
+   X zipZap("zzzopzop"): Incorrect [zzzopzop]
+   X zipZap("zibzap"): Incorrect [zibzap]
+   X zipZap("zip"): Incorrect [zip]
+   + zipZap("zi")->zi
+   + zipZap("z")->z
+   + zipZap("")->
+   X zipZap("zzp"): Incorrect [zzp]
+   + zipZap("abcppp")->abcppp
+   + zipZap("azbcppp")->azbcppp
+   X zipZap("azbcpzpp"): Incorrect [azbcpzpp]
+----------------------------------------------------------------------
+  Tests passing 5/12 (42%).
+
+Checking function: countCode -------------------
+   + countCode("aaacodebbb")->1
+   + countCode("codexxcode")->2
+   + countCode("cozexxcope")->2
+   + countCode("cozfxxcope")->1
+   + countCode("xxcozeyycop")->1
+   + countCode("cozcop")->0
+   + countCode("abcxyz")->0
+   + countCode("code")->1
+   + countCode("ode")->0
+   + countCode("c")->0
+   + countCode("")->0
+   + countCode("AAcodeBBcoleCCccoreDD")->3
+   + countCode("AAcodeBBcoleCCccorfDD")->2
+   + countCode("coAcodeBcoleccoreDD")->3
+----------------------------------------------------------------------
+  Tests passing 14/14 (100%).
+
+Checking function: prefixAgain -------------------
+   X prefixAgain("abXYabc", 1)
+   X prefixAgain("abXYabc", 2)
+   + prefixAgain("abXYabc", 3)
+   X prefixAgain("xyzxyxyxy", 2)
+   + prefixAgain("xyzxyxyxy", 3)
+   X prefixAgain("Hi12345Hi6789Hi10", 1)
+   X prefixAgain("Hi12345Hi6789Hi10", 2)
+   X prefixAgain("Hi12345Hi6789Hi10", 3)
+   + prefixAgain("Hi12345Hi6789Hi10", 4)
+   + prefixAgain("a", 1)
+   X prefixAgain("aa", 1)
+   + prefixAgain("ab", 1)
+----------------------------------------------------------------------
+  Tests passing 5/12 (42%).
+
+----------------------------------------------------------------------
+INSTRUCTOR TESTS H07:nnojiri: ALL TESTS -- PASS 24/45 (53%).
+----------------------------------------------------------------------
+MTY0Njc1NDAyOTpubm9qaXJpOkgwNzo1My4zMyU=

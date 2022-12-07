@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140226-r5756">
+  <project autorefresh="false" main="Pong" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Pong.java" package="" timestamp="24-Aug-2011 18:02:45">
+        <select from="234" to="234"/>
+        <scroll column="59" row="0"/>
+      </file>
+      <file name="PongApp.java" package="" timestamp="03-Nov-2009 11:01:52">
+        <select from="234" to="234"/>
+        <scroll column="59" row="0"/>
+      </file>
+      <file name="PongTimer.java" package="" timestamp="03-Nov-2012 12:09:26">
+        <select from="234" to="234"/>
+        <scroll column="59" row="0"/>
+      </file>
+      <file name="PongCanvas.java" package="" timestamp="03-Nov-2012 12:03:37">
+        <select from="234" to="234"/>
+        <scroll column="59" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath>
+      <file absolute="false" name="PongLib.jar"/>
+    </classpath>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
