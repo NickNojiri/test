@@ -1,0 +1,22 @@
+tell me how to make the game pong
+
+1. Create a basic game window with two paddles on either side of the screen.
+
+2. Create a ball sprite and make it move across the screen.
+
+3. Make the ball bounce off the paddles when it hits them.
+
+4. Give each paddle a score when the ball passes it. rotate the ball?? angle is used so radians are important
+
+5. Create a timer to end the game after a set amount of time.
+
+6. Add sound effects for when the ball hits the paddles.
+
+7. Give players the option to change game settings, such as the ball speed and paddle size.
+
+
+8. Create a power-up system that gives players temporary bonuses.
+
+9. Add a high-score system to keep track of the best players.
+
+10. Create an AI opponent to challenge the player.

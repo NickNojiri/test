@@ -8,6 +8,7 @@ public class node{
 
     public node(int f,node n)
     {
+        
         next= n;
         front = f;
     }

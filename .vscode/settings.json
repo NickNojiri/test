@@ -1,9 +1,13 @@
 {
     "files.associations": {
+        "*.rkt": "racket",
+        "*.asm": "asm",
+        "*.s": "asm",
         "bitset": "cpp",
         "algorithm": "cpp",
         "iostream": "cpp",
         "iosfwd": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "vector": "cpp"
     }
 }

@@ -1,4 +1,4 @@
--/**
+L/**
  *  @nicholas nojiri
  *  @spring2022tue/thru
  *  @file salary-calc.cpp
