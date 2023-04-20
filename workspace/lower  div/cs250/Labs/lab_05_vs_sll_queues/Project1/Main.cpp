@@ -14,10 +14,23 @@ using namespace std;
 
 int main()
 {
-	// Write your testing cases
+    LinkedQueue myQueue;
+    for (int i = 1; i <= 100; ++i) {
+        myQueue.push(i);
+        cout << "(" << myQueue.front() << ", " << myQueue.back() << ")";
+    }
+    // Print out the queue elements
+    while (!myQueue.empty())
+    {
+        cout << "(" << myQueue.front() << ", " << myQueue.back() << ")";
+        if (myQueue.front() % 10 == 0)
+        {
+            cout<< endl << "congrats on winnging a new car!!!";
+        }
+        myQueue.pop();
+    }
+    cout << myQueue.front() << " ";
 
-	
-	cout << "\n";
-	return 0;
+    return 0;
 }
 
