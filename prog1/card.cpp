@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include card.h
+#include "Card.h"
 
 using namespace std;
 
@@ -48,4 +48,3 @@ int Card::compare(Card other)
     }
     return result;
 }
-
