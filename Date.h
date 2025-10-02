@@ -7,7 +7,7 @@
 using namespace std;
 
 
-class Date()
+class Date
 {
     public:
         int* d;
@@ -15,10 +15,10 @@ class Date()
 
         //helpers funcs
 
-        bool isValidDate(int m, int d,int y) const int ID;
+        bool isValidDate(int m, int d,int y) const;
         bool isLeapYear(int y) const;
         int daysInMonth(int m, int y) const;
-        void juiliantoGregorian(int jd);
+        void julianToGregorian(int jd);
         int gregorianToJulian() const;
         int dayOfWeek() const;
         void addDays(int days);
@@ -27,8 +27,8 @@ class Date()
     private:
     Date(); //def
     Date(int M, int D,int Y);
-    Date(int J) //fortran
-    Date(const Date& other) //Copy constr
+    Date(int J); //fortran
+    Date(const Date& other);//Copy constr
 
     ~Date();//need because dynamic
 
@@ -44,7 +44,7 @@ class Date()
     int julian() const;
 
     //static
-    static int count; //its just a int
+    static int coun()t; //its just a int method
 
     //opoverloaded
     Date& operator+=(int days);
@@ -57,13 +57,13 @@ class Date()
     Date& operator++();//pre
     Date operator++(int);//post
     Date& operator--();
-    Date operator(int);
+    Date operator--(int);
 
     //bin asserts
     bool operator==(const Date& other) const;
-    bool operator=!(const Date& other) const;
-    bool operator=<(const Date& other) const;        
-    bool operator=>(const Date& other) const;
+    bool operator!=(const Date& other) const;
+    bool operator>=(const Date& other) const;        
+    bool operator<=(const Date& other) const;
     bool operator>(const Date& other) const;
     bool operator<(const Date& other) const;
 
