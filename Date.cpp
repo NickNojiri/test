@@ -35,7 +35,7 @@ Date::Date(int m, int d, int y)
 Date::Date(int j)
 {
     date = new int[3];
-    date = new int[3];
+    julianToGregorian(j);
     objectiveCount++;
 }
 
@@ -103,7 +103,7 @@ int Date::dayOfWeek() const {
     return (jd + 1) % 7;
 }
 
-bool Date::isValidDate(int m,int d, int y)
+bool Date::isValidDate(int m,int d, int y) const
 {
     if(y < 1 || m < 1 || m > 12 || d < 1)
         return false;
@@ -111,7 +111,7 @@ bool Date::isValidDate(int m,int d, int y)
 }
 
 int Date::daysInMonth(int m, int y)const {
-    const int days[] = {{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    const int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     if(m == 2 && isLeapYear(y))
         return 29;
     return days[m -1 ];
@@ -146,12 +146,6 @@ int Date::gregorianToJulian() const
     return jd;
 }
 
-int Date::dayOfWeek() const 
-{
-    int jd = gregorianToJulian();
-    return (jd+1) % 7;
-}
-
 void Date::addDays(int days)
 {
     int jd = gregorianToJulian() + days;
@@ -160,9 +154,19 @@ void Date::addDays(int days)
 
 Date& Date::operator+=(int days)
 {
-    addDays(-days);
-    return*this;
+    addDays(days);
+    return *this;
 }
+Date& Date::operator-=(int days) {
+       addDays(-days);
+       return *this;
+   }
+
+   Date Date::operator-(int days) const {
+       Date temp(*this);
+       temp.addDays(-days);
+       return temp;
+   }
 
 Date Date::operator+(int days)const
 {
@@ -173,7 +177,7 @@ Date Date::operator+(int days)const
 
 int Date::operator-(const Date& other) const
 {
-    return this->gregorianToJulian() - other.gregorianToJulian;
+    return this->gregorianToJulian() - other.gregorianToJulian();
 }
 
 Date& Date::operator++() { // Prefix
